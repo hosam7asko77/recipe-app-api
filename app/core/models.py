@@ -20,6 +20,7 @@ class UserManger(BaseUserManager):
         user.save(using=self._db)
         return user
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     # user models that support using email
     email = models.EmailField(unique=True)

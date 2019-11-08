@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .  import models
+from . import models
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from  django.utils.translation import gettext as _
+from django.utils.translation import gettext as _
 
 # Register your models here.
 
@@ -14,7 +14,7 @@ class UserAdmin(BaseUserAdmin):
         (_('personal info'), {'fields': ('name',)}),
         (
             _('permission'),
-            {'fields': ('is_active','is_staff', 'is_superuser')}
+            {'fields': ('is_active', 'is_staff', 'is_superuser')}
         ),
         (_('important'), {'fields': ('last_login',)})
     )
@@ -27,5 +27,3 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
-
-
